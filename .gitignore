@@ -1,0 +1,14 @@
+.idea/
+
+*.exe
+*.dll
+*.so
+*.dylib
+
+.glide/
+vendor/
+artifacts/
+
+*.test
+*.out
+coverage.out

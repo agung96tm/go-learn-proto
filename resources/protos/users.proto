@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package users;
+
+option go_package = "github.com/agung96tm/go-miblog-proto/resources/protos";
+
+message User {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+service Users {
+  rpc ListUser(ListUserIn) returns (ListUserOut) {}
+}
+
+message ListUserIn {
+  int64 q = 1;
+}
+
+message ListUserOut {
+  enum Status {
+    OK = 0;
+    NOT_FOUND = 2;
+  }
+  Status status = 1;
+  repeated User users = 2;
+}
